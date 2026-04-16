@@ -1,0 +1,34 @@
+{
+  "_comment": "Baseline permissions file for Verify-ADOProjectPermissions.ps1",
+  "_doc": [
+    "You may define permissions in one of two ways (or combine both):",
+    "",
+    "  1. Raw bitmask mode — supply 'allow' and/or 'deny' integer values.",
+    "     The script will assert that the ACE for the role exactly matches",
+    "     these bitmasks on the Project security namespace.",
+    "",
+    "  2. Named permission mode — supply a 'permissions' object whose keys",
+    "     are well-known permission names (see list below) and whose values",
+    "     are boolean (true = granted, false = not granted).",
+    "     Named permissions are resolved against the built-in bit map.",
+    "",
+    "Named permissions supported (Project namespace):",
+    "  GenericRead, GenericWrite, Delete, PublishTestResults,",
+    "  ReadTestResults, UpdateBuildInformation, EditBuildStatus,",
+    "  UpdateBuild, DeleteTestResults, ViewBuilds, ManageBuildQueue,",
+    "  ManageBuildDefinitions, DestroyBuilds, AdministrateBuildPermissions,",
+    "  ManageBuildQualityChecks"
+  ],
+
+  "allow": 31,
+  "deny": 0,
+
+  "permissions": {
+    "GenericRead":    true,
+    "GenericWrite":   true,
+    "Delete":         false,
+    "ViewBuilds":     true,
+    "ManageBuildDefinitions": false
+  }
+}
+
